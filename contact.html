@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Netlify</title>
+	<meta name="description" content="Building a Netlify site from the ground up">
+	<meta name="author" content="Mike C. Taylor">
+</head>
+
+<body>
+	<h1>Contact</h1>
+	<form name="contact" method="POST" netlify>
+		<p>
+			<label>Name: <input type="text" name="name" /></label>
+		</p>
+		<p>
+			<label>Email: <input type="email" name="email" /></label>
+		</p>
+		<p>
+			<label>Role: 
+     			<select name="role[]" multiple>
+      			<option value="leader">Leader</option>
+      			<option value="follower">Follower</option>
+    			</select>
+    		</label>
+		</p>
+		<p>
+			<label>Message: <textarea name="message"></textarea></label>
+		</p>
+		<div data-netlify-recaptcha></div>
+		<p>
+			<button type="submit">Send</button>
+		</p>
+	</form>
+
+</body>
+
+</html>
