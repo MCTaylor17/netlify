@@ -11,7 +11,7 @@
 
 <body>
 	<h1>Contact</h1>
-	<form name="contact" method="POST" netlify>
+	<form name="contact" method="POST" netlify netlify-honeypot="bot-field" action="/contact-success.html">
 		<p>
 			<label>Name: <input type="text" name="name" /></label>
 		</p>
@@ -25,6 +25,9 @@
       			<option value="follower">Follower</option>
     			</select>
     		</label>
+		</p>
+		<p class="hidden">
+			<label>Don’t fill this out if you're human: <input name="bot-field" /></label>
 		</p>
 		<p>
 			<label>Message: <textarea name="message"></textarea></label>
