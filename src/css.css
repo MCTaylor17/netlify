@@ -1,0 +1,9 @@
+.huge {
+  font-size: 5rem;
+}
+
+.css {
+  composes: huge;
+  composes: centered from "./sass.scss";
+  color: red;
+}

@@ -1,0 +1,38 @@
+{
+  "name": "mktlr",
+  "version": "1.0.0",
+  "description": "a portfolio or something",
+  "main": "app.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MCTaylor17/netlify.git"
+  },
+  "author": "Mike C. Taylor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MCTaylor17/netlify/issues"
+  },
+  "homepage": "https://github.com/MCTaylor17/netlify#readme",
+  "dependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.1.9"
+  }
+}
