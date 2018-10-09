@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production && echo '/*  /index.html  200' > dist/_redirects"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,8 @@
     "node-sass": "^4.9.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-helmet": "^5.2.0",
+    "react-router-dom": "^4.3.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.20.2",

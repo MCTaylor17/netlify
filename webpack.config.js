@@ -48,5 +48,9 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlPlugin]
+  plugins: [htmlPlugin],
+  devServer: {
+    publicPath: '/',
+    historyApiFallback: true
+  }
 };
