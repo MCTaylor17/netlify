@@ -10,6 +10,7 @@ const Header = () => (
         <li><Link to='/child2'>Child2</Link></li>
       </ul>
     </nav>
+    <h1>MKTLR</h1>
   </header>
 )
 
