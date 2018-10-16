@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import Main from "./Main";
 import Header from "./Header";
+import AnchorPoint from "react-anchor-point";
 
 const App = () => {
   return (
@@ -11,7 +12,9 @@ const App = () => {
         <title>Put on your helmet</title>
       </Helmet>
       <Header />
-      <Main />
+      <AnchorPoint ref={(reactAnchor) => { window.reactAnchor = reactAnchor}}>
+        <Main />
+      </AnchorPoint>
     </div>
     );
 };
