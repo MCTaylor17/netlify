@@ -10,12 +10,16 @@ const App = () => {
     <div>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Put on your helmet</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>MKTLR = Marketing + Web Development</title>
       </Helmet>
+    
       <Header />
+    
       <AnchorPoint ref={(reactAnchor) => { window.reactAnchor = reactAnchor}}>
         <Main />
       </AnchorPoint>
+  
     </div>
     );
 };
