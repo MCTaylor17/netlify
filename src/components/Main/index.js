@@ -2,7 +2,6 @@ import React from "react"
 import { Switch, Route } from 'react-router-dom'
 import Home from './Home'
 import Dewordify from './Dewordify'
-import Child2 from './Child2'
 
 const Main = () => (
   <main style={{clear: "both"}}>
