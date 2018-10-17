@@ -9,7 +9,6 @@ const Header = () => (
       <ul>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/dewordify'>Dewordify</Link></li>
-        <li><Link to='/child2'>Child2</Link></li>
       </ul>
     </nav>
   </header>
