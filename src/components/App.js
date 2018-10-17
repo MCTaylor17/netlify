@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import Main from "./Main";
 import Header from "./Header";
 import AnchorPoint from "react-anchor-point";
+import styles from "./global.scss";
 
 const App = () => {
   return (
