@@ -2,7 +2,7 @@ import React from "react"
 import { NavLink } from "react-router-dom";
 import styles from "./styles.scss";
 
-const Navigation = () => (
+const NavBar = () => (
   <nav className={styles.nav}>
     <ul>
       <li><NavLink activeClassName={styles.active} to='/' exact>Home</NavLink></li>
@@ -11,4 +11,4 @@ const Navigation = () => (
   </nav>
 )
 
-export default Navigation;
+export default NavBar;

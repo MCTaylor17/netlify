@@ -1,13 +1,13 @@
 import React from "react";
-import MKTLR from "./MKTLR.js";
-import Navigation from "./Navigation";
+import MKTLR from "./MKTLR";
+import NavBar from "./NavBar";
 
 class Header extends React.Component { 
   render() {
     return (
       <header>
         <MKTLR/>
-        <Navigation/>
+        <NavBar/>
       </header>    
     )
   }

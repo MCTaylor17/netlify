@@ -1,0 +1,14 @@
+@import "../../../variables";
+
+.nav {
+  ul {
+    list-style-type: none;
+    li {
+      float: left;
+    }
+  }
+}
+
+.active {
+  background: $primary-color;
+}

@@ -1,4 +1,4 @@
-@import "../../variables";
+@import "../../../variables";
 
 .mktlr {
   font-size: 5em;
@@ -7,6 +7,7 @@
   display: inline-block;
   margin: 0;
   position: relative;
+  color: $primary-darkest;
   
   &:before {
     content: "";
@@ -38,22 +39,10 @@
     opacity: 1;
   }
 }
+
 .faster {
   @extend .hidden;
   // !important required for some reason.
   // I blame webpack.
   transition: opacity 3s ease, max-width 1.3s ease !important;
-}
-
-.nav {
-  ul {
-    list-style-type: none;
-    li {
-      float: left;
-    }
-  }
-}
-
-.active {
-  background: $primary-color;
 }

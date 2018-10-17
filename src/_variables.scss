@@ -1,1 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic|Ubuntu');
+
+$heading-font: 'Ubuntu', sans-serif;
+$body-font: 'Didact Gothic', sans-serif;
+
 $primary-color: #5bbad5;
+$primary-color: #f0e42d;
+$primary-lightest: lighten($primary-color,20%);
+$primary-darkest: darken($primary-color,47%);
