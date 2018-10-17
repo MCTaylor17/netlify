@@ -1,7 +1,12 @@
-.h1 {
+@import "~/../src/variables";
+
+.mktlr {
   font-size: 5em;
   line-height: 1;
   transition: font-size 1s ease;
+  border-bottom: 5px solid gray;
+  display: inline-block;
+  margin: 0;
   
   @media only screen and (max-width: 600px) {
     & {
@@ -10,8 +15,7 @@
   }
   
   .hidden {
-    //float: left;
-    transition: opacity 1s ease, max-width 1s ease;
+    transition: opacity 3s ease, max-width 2s ease;
     display: inline-block;
     opacity: 0;
     max-width: 0;    
@@ -20,11 +24,13 @@
   &:hover .hidden {
     max-width: 100px;
     opacity: 1;
-    
-    .gap {
-      margin-right: 20px;
-    }
   }
+}
+.faster {
+  @extend .hidden;
+  // !important required for some reason.
+  // I blame webpack.
+  transition: opacity 3s ease, max-width 1.3s ease !important;
 }
 
 .nav {
@@ -34,4 +40,8 @@
       float: left;
     }
   }
+}
+
+.active {
+  background: $primary-color;
 }

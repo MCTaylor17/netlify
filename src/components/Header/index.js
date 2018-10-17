@@ -1,17 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./styles.scss";
+import MKTLR from "./MKTLR.js";
+import Navigation from "./Navigation";
 
-const Header = () => (
-  <header>
-    <h1 className={styles.h1}>M<span className={styles.hidden}>I</span>K<span className={styles.hidden + " " + styles.gap}>E </span>T<span className={styles.hidden}>AY</span>L<span className={styles.hidden}>O</span>R</h1>
-    <nav className={styles.nav}>
-      <ul>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/dewordify'>Dewordify</Link></li>
-      </ul>
-    </nav>
-  </header>
-)
+class Header extends React.Component { 
+  render() {
+    return (
+      <header>
+        <MKTLR/>
+        <Navigation/>
+      </header>    
+    )
+  }
+}
 
 export default Header;
