@@ -1,5 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const autoprefixer = require("autoprefixer");
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const favicon = new FaviconsWebpackPlugin("./logo.png");
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
@@ -52,7 +54,7 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlPlugin,autoprefixer],
+  plugins: [htmlPlugin,autoprefixer,favicon],
   devServer: {
     publicPath: '/',
     historyApiFallback: true
