@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const autoprefixer = require("autoprefixer");
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
@@ -18,6 +19,9 @@ const cssLoader = [
       sourceMap: true,
       minimize: true
     }
+  },
+  {
+    loader: "postcss-loader"
   }
 ];
 
@@ -48,7 +52,7 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlPlugin],
+  plugins: [htmlPlugin,autoprefixer],
   devServer: {
     publicPath: '/',
     historyApiFallback: true
