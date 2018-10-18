@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 
 const Child1 = () => (
-  <div>
+  <article>
     <Helmet>
       <title>Dewordify.js</title>
     </Helmet>
@@ -58,7 +58,7 @@ const Child1 = () => (
 
     <p>In general, Dewordify unshackled the course production team from the tedious, stressful, and labour intensive work in order to focus on creating new value and innovations.</p>
 
-  </div>
+  </article>
 )
 
 export default Child1;
