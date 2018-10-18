@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div>
       <Head/>    
-      <Background img="/public/bird.jpg" interval={20000} colors="cadetblue, cornflowerblue, darkblue, darkcyan, darkgreen, darkolivegreen"/>
+      <Background interval={20000} colors="cadetblue, cornflowerblue, darkblue, darkcyan, darkgreen, darkolivegreen"/>
       <Header />
       <AnchorPoint ref={(reactAnchor) => { window.reactAnchor = reactAnchor}}>
         <Main />

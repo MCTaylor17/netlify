@@ -34,8 +34,7 @@ class Background extends React.Component {
   render() {
     let bgStyles = {
       backgroundColor: this.state.bgColor,
-      transitionDuration: this.intervalSeconds,
-      backgroundImage: `url(${this.props.img})`
+      transitionDuration: this.intervalSeconds
     };
     
     return (
