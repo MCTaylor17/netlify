@@ -51,6 +51,15 @@ module.exports = {
       {
         test: /\.scss$/,
         use: sassLoader
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: { useRelativePath: true }
+          }
+        ]
       }
     ]
   },
