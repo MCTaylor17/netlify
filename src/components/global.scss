@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../em-reset";
 
 * {
   box-sizing: border-box;
@@ -7,7 +8,6 @@
 html {
   font-family: $body-font;
   font-size: 62.5%;
-  line-height: 1.4;
   color: $primary-darkest;
   position: relative;
   margin: 0;
@@ -17,16 +17,32 @@ html {
 
 body {
   font-size: 1.7rem;
+  line-height: 1.4;
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
 }
 
-p {
-  margin-bottom: 1.5rem;
+// General Spacing
+main {
+  p, ol, ul {
+    margin-bottom: 1.5rem;
+  }
 }
 
+// Lists
+main {
+  ol, ul {
+    list-style-type: circle;
+    margin-left: 3rem;
+  }
+  li:hover {
+    list-style-type: disc;
+  }
+}
+
+// Hyperlinks
 main a {
   color: $primary-darkest;
   border-bottom: 3px solid $primary-color;
@@ -55,7 +71,43 @@ main a {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
   font-family: $heading-font;
+}
+
+
+$h1-size: 4rem;
+$h2-size: 2.6rem;
+$h3-size: 2.3rem;
+$h4-size: 2.1rem;
+$h5-size: 2rem;
+$h6-size: 1.9rem;
+
+main {
+  h1 {
+    font-size: $h1-size;
+    margin: ($h1-size * .5) 0;
+  }
+  h2 {
+    font-size: $h2-size;
+    margin: ($h2-size * .5) 0;
+  }
+  h3 {
+    font-size: $h3-size;
+    margin: ($h3-size * .5) 0;
+  }
+  h4 {
+    font-size: $h4-size;
+    margin: ($h4-size * .5) 0;
+  }
+  h5 {
+    font-size: $h5-size;
+    margin: ($h5-size * .5) 0;
+  }
+  h6 {
+    font-size: $h6-size;
+    margin: ($h6-size * .5) 0;
+  }
 }
 
 ::selection {
