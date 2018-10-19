@@ -1,6 +1,6 @@
 .background {
   position: fixed;
-  height: 100%;
+  height: calc(100% + 30px);
   width: 100%;
   z-index: -1;
   background: {
