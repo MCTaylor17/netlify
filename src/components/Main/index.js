@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import Dewordify from './Dewordify';
 import Bio from './Bio';
+import FAQ from './FAQ';
 import styles from "./styles.scss";
 
 const Main = () => (
@@ -11,6 +12,7 @@ const Main = () => (
       <Route exact path='/' component={Home}/>
       <Route path='/bio' component={Bio}/>
       <Route path='/dewordify' component={Dewordify}/>
+      <Route path='/faq' component={FAQ}/>
     </Switch>
   </main>
 )

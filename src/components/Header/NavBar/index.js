@@ -7,6 +7,7 @@ const NavBar = () => (
     <ul>
       <li><NavLink activeClassName={styles.active} to='/' exact>Home</NavLink></li>
       <li><NavLink activeClassName={styles.active} to='/bio'>Bio</NavLink></li>
+      <li><NavLink activeClassName={styles.active} to='/faq'>FAQ</NavLink></li>
       <li><NavLink activeClassName={styles.active} to='/dewordify'>Dewordify</NavLink></li>
     </ul>
   </nav>
