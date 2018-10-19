@@ -4,6 +4,7 @@ import Home from './Home';
 import Dewordify from './Dewordify';
 import Bio from './Bio';
 import FAQ from './FAQ';
+import Typography from './Typography';
 import styles from "./styles.scss";
 
 const Main = () => (
@@ -13,6 +14,7 @@ const Main = () => (
       <Route path='/bio' component={Bio}/>
       <Route path='/dewordify' component={Dewordify}/>
       <Route path='/faq' component={FAQ}/>
+      <Route path='/typography' component={Typography}/>
     </Switch>
   </main>
 )
