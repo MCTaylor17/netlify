@@ -9,6 +9,7 @@
   margin-bottom: 20px;
   position: relative;
   color: $primary-darkest;
+  user-select: none;
   
   &:before {
     content: "";
