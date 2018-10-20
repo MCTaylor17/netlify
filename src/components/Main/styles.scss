@@ -1,9 +1,42 @@
+@import "../../variables";
+
 .main {
   article {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.85);
     max-width: 700px;
     padding: 20px;
     margin: 0 20px;
+    box-shadow: 15px 15px 15px rgba(198, 198, 198, 0.2);
+    display: block;
+    position: relative;
+    border-top-right-radius: 30px;
+    
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      background: $primary-darkest;
+      z-index: -1;
+      border-radius: 50%;
+    }
+    
+    &:before {
+      top: 20px;
+      right: 20px;
+      height: 40px;
+      width: 40px;      
+      background: lighten(black, 85%); // 3rd
+      border: 5px solid lighten(black, 95%); // 4th
+      box-shadow: 0 0 15px lighten(black, 50%)
+    }
+    &:after {
+      background: lighten(black, 60%); // 1st
+      border: 5px solid lighten(black, 75%); // 2nd
+      top: 30px;
+      right: 30px;
+      height: 20px;
+      width: 20PX;            
+    }
     
     & {
       *:first-child, *:last-child {
