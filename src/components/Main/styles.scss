@@ -9,33 +9,28 @@
     box-shadow: 15px 15px 15px rgba(198, 198, 198, 0.2);
     display: block;
     position: relative;
-    border-top-right-radius: 30px;
+    border-top-right-radius: 10px;
     
     &:before,
     &:after {
       content: "";
       position: absolute;
-      background: $primary-darkest;
+      background: rgba($primary-darkest,.2);
+      border-radius: 5px;
       z-index: -1;
-      border-radius: 50%;
     }
     
     &:before {
-      top: 20px;
+      top: 5px;
       right: 20px;
-      height: 40px;
-      width: 40px;      
-      background: lighten(black, 85%); // 3rd
-      border: 5px solid lighten(black, 95%); // 4th
-      box-shadow: 0 0 15px lighten(black, 50%)
+      height: 100px;
+      width: 2px;      
     }
     &:after {
-      background: lighten(black, 60%); // 1st
-      border: 5px solid lighten(black, 75%); // 2nd
-      top: 30px;
-      right: 30px;
-      height: 20px;
-      width: 20PX;            
+      top: 20px;
+      right: 5px;
+      height: 2px;
+      width: 100px;            
     }
     
     & {
@@ -43,5 +38,9 @@
         margin-top: 0;
       }
     }
+  }
+  
+  img {
+    width: 100%;
   }
 }
