@@ -1,0 +1,75 @@
+@import "../../../variables";
+
+.skillBox {
+  position: relative;
+  background: $primary-lightest;
+  display: block;
+  overflow: hidden;
+  width: 50%;
+  height: 200px;
+  float: left;
+  
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    box-shadow: 0 0 30px 30px $primary-lightest;
+    left: 0;
+    z-index: 2
+  }
+  
+  &:before {
+    top: 0;
+  }
+  
+  &:after {
+    bottom: 0;
+  }
+  
+  // React synthetic events are bound to the 'Link' component which is rendered as an <a> tag
+  a { 
+    h1 {
+    position: absolute;
+    display: table-cell;
+    vertical-align: middle;
+    background: #e0e0e0; // <-- hoist into variables
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    border: 5px dashed gray;
+    transition: all 1s ease, color 1s ease, border 1s ease;
+    z-index: 10;
+    }
+    
+    &:hover, &:focus {
+      h1 {
+        color: transparent;
+        background: transparent;
+        border-color: transparent;
+      }
+    }
+  }
+  
+  ul {
+    position: relative;
+    height: 100%;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  // Skills
+  li {
+    position: absolute;
+    font-size: 2.5rem;
+    z-index: 1;
+    list-style-type: none;
+    padding-bottom: 2rem;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Marketing",
+    "abbr": "MKTG",
+    "subSkills": [
+      "New Product Development",
+      "Integrated Marketing Communications",
+      "Strategic Marketing",
+      "Market Penetration",
+      "Sales and Customer Service strategies",
+      "Content copy creation",
+      "Audience segmentation",
+      "Focus groups, interviews, and questionaires"
+    ]
+  },
+  {
+    "title": "User Experience",
+    "abbr": "UX",
+    "subSkills": [
+      "Information Archetecture",
+      "Content Strategy",
+      "Persona Creation",
+      "Universal Design and Legal Accessibility",
+      "Card Sorting",
+      "User testing",
+      "Hypothesis testing"
+    ]
+  }
+]
