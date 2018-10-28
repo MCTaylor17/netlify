@@ -43,7 +43,6 @@ class SkillBox extends React.Component {
       data.children.push(child);
     }
     
-    console.log(data);
     this.data = data;
   }
 
