@@ -10,70 +10,90 @@ class SkillBox extends React.Component {
     this.state = {}
     this.interval = null;
     this.scrollDistance = 0;
+    this.data = null;
+    this.scrolling = false;
     
     this.startScrolling = this.startScrolling.bind(this);
     this.focusHandler = this.focusHandler.bind(this);
     this.blurHandler = this.blurHandler.bind(this);
+    this.scrollingAnimationFrame = this.scrollingAnimationFrame.bind(this);
+    this.calculateData = this.calculateData.bind(this);
   }
   
-  componentDidMount() {
-
-  }
   
-  
-  startScrolling() {
-    clearTimeout(this.interval);
-    // get list items
+  calculateData() {
+    let data = {
+      stackHeight: 0,
+      children: []
+    };
     let $subSkillList = ReactDOM.findDOMNode(this.refs.subSkillList);
     let $subSkills = $subSkillList.children;
     
-    let data = {};
-    
-    console.log($subSkillList.getBoundingClientRect());
-    
     data.parentHeight = $subSkillList.getBoundingClientRect().height;
-    data.stackHeight = 0;
-    data.children = [];
     
     for(let subSkill of $subSkills) {
       let child = {};
       let rect = subSkill.getBoundingClientRect();
       
-      data.children.push(child);
       
       child.node = subSkill;
       child.minTop = rect.height * -1;
-      child.currentTop = data.stackHeight;// + data.parentHeight;
+      child.currentTop = data.stackHeight;
       data.stackHeight += rect.height;
-      subSkill.style.setProperty("top", child.currentTop + "px");
-      //subSkill.style.setProperty("top", "50px");
+      data.children.push(child);
     }
     
-    
-    
-    this.interval = setInterval(() => {
-      for(let child of data.children) {
-        child.currentTop -= 1;
-        
-        if(child.currentTop < child.minTop) {
-          child.currentTop += data.stackHeight;
-        }
-        
-        child.node.style.setProperty("top", child.currentTop + "px");
-        //child.node.style.top = child.currentTop + "px";
-      }
-    },50);
+    console.log(data);
+    this.data = data;
   }
-      
+
+  
+  componentDidMount() {
+    // Waits for first paint
+    // Problem seems to be delay caused by absolute positioning in the stylesheet...
+    setTimeout(this.calculateData);
+  }
+
+  
+  scrollingAnimationFrame() {
+    for(let child of this.data.children) {
+      child.currentTop -= .5;
+
+      if(child.currentTop < child.minTop) {
+        // Send child to bottom of stack
+        child.currentTop += this.data.stackHeight;
+      }
+
+      requestAnimationFrame(() => {
+        child.node.style.setProperty("top", child.currentTop + "px");
+      });
+    }
+  }
+  
+  
+  startScrolling() {
+    this.scrolling = true;
+    this.interval = setInterval(this.scrollingAnimationFrame, 1000/60);
+  }
+  
+  
   focusHandler() {
-    if(true) {
+    if(!this.scrolling) {  
       this.startScrolling();
     }
   }
   
-  blurHandler() {
-    clearTimeout(this.interval);
+  
+  stopScrolling() {
+    clearInterval(this.interval);
+    this.scrolling = false;    
   }
+  
+  
+  blurHandler() {
+    this.stopScrolling();
+  }
+  
   
   render() { 
     return (
