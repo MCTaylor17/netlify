@@ -1,6 +1,7 @@
 import React from "react";
 import skillBox from "./skill-box.jpg";
 import skillBoxTech from "./skill-box-tech.jpg";
+import skillBoxPrototype from "./skill-box-prototype.jpg";
 import SkillBox from "./SkillBox";
 import skills from "./skill-data";
 
@@ -46,10 +47,19 @@ const Home = () => (
       <li>CSS animations</li>
     </ul>
     <p>The first one is the lowest hanging fruit while the latter two seem more complicated to implement based on the need to use rendered height calculations that respect sibling order.  Or it's easy and I just come up with an elegant solution yet.</p>
+  
+    <img src={skillBoxPrototype} />
+  
+    <h3>Production Component</h3>
+    <p>As the concept was validated with a working prototype, further development seemed warranted so some finishing styles were added.  Here's the current product:</p> 
+  
     <div>
     {skills.map((skill, key) => <SkillBox key={key} slug={"./" + skill.abbr} title={skill.title} subSkills={skill.subSkills} />)}
     </div>
-    <p>Irrelevant facts about me:</p>
+
+    <p>It now uses requestAnimationFrame to optimize the animation, but it still operates directly on the DOM which is not exactly idiomatic React.  I started refactoring it to use pure-React state-management, but ran into some complications.  Before investing too much time into this, I need to confirm that using the 'setState' method at 60fps is both workable and sane.</p>
+
+    <h2>Irrelevant facts about me:</h2>
     <ul>
       <li>I began longboarding in my 30's just to see if I could (it turns out I can only kinda)</li>
       <li>I bike commuted 25km a day all the way through Vancouver's 2017 winter which had 1,083mm of rainfall</li>

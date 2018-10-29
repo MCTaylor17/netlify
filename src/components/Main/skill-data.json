@@ -25,5 +25,34 @@
       "User testing",
       "Hypothesis testing"
     ]
+  },
+  {
+    "title": "Frontend Development",
+    "abbr": "Frontend",
+    "subSkills": [
+      "HTML/CSS/JS",
+      "jQuery",
+      "Sass & PostCSS",
+      "Version Control (Git/Github/Gitlab/Bitbucket)",
+      "React",
+      "API consumption",
+      "A-Frame (VR)",
+      "Browser APIs"
+    ]
+  },
+  {
+    "title": "Backend Development",
+    "abbr": "Backend",
+    "subSkills": [
+      "Node.js and PHP",
+      "ExpressJS",
+      "SQL/NoSQL",
+      "Workflows (Gulp/Webpack)",
+      "Continuous Integration",
+      "Web Sockets",
+      "REST APIs",
+      "Linux",
+      "CLI development"
+    ]
   }
 ]

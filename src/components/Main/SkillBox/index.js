@@ -8,8 +8,8 @@ class SkillBox extends React.Component {
     super(props);
 
     this.state = {}
-    this.interval = null;
-    this.scrollDistance = 0;
+    this.animationInterval = null;
+    this.resizeTimeout = null;
     this.data = null;
     this.scrolling = false;
     
@@ -18,10 +18,12 @@ class SkillBox extends React.Component {
     this.blurHandler = this.blurHandler.bind(this);
     this.scrollingAnimationFrame = this.scrollingAnimationFrame.bind(this);
     this.calculateData = this.calculateData.bind(this);
+    this.resizeHandler = this.resizeHandler.bind(this);
   }
   
   
   calculateData() {
+    this.scrolling = true;
     let data = {
       stackHeight: 0,
       children: []
@@ -29,8 +31,11 @@ class SkillBox extends React.Component {
     let $subSkillList = ReactDOM.findDOMNode(this.refs.subSkillList);
     let $subSkills = $subSkillList.children;
     
-    data.parentHeight = $subSkillList.getBoundingClientRect().height;
     
+    for(let subSkill of $subSkills) {
+      subSkill.style.setProperty("position","static");
+    }
+    console.log("Caculating");
     for(let subSkill of $subSkills) {
       let child = {};
       let rect = subSkill.getBoundingClientRect();
@@ -43,7 +48,16 @@ class SkillBox extends React.Component {
       data.children.push(child);
     }
     
+    for(let subSkill of $subSkills) {
+      requestAnimationFrame(() => {
+        subSkill.style.setProperty("position","absolute");
+      });
+    }
+    
+    data.parentHeight = $subSkillList.getBoundingClientRect().height;
+    
     this.data = data;
+    this.scrolling = false;
   }
 
   
@@ -51,6 +65,12 @@ class SkillBox extends React.Component {
     // Waits for first paint
     // Problem seems to be delay caused by absolute positioning in the stylesheet...
     setTimeout(this.calculateData);
+    window.addEventListener("resize", this.resizeHandler);
+  }
+  
+  resizeHandler() {
+    clearTimeout(this.resizeTimeout);
+    this.resizeTimeout = setTimeout(this.calculateData,1000);
   }
 
   
@@ -72,7 +92,7 @@ class SkillBox extends React.Component {
   
   startScrolling() {
     this.scrolling = true;
-    this.interval = setInterval(this.scrollingAnimationFrame, 1000/60);
+    this.animationInterval = setInterval(this.scrollingAnimationFrame, 1000/60);
   }
   
   
@@ -84,7 +104,7 @@ class SkillBox extends React.Component {
   
   
   stopScrolling() {
-    clearInterval(this.interval);
+    clearInterval(this.animationInterval);
     this.scrolling = false;    
   }
   
